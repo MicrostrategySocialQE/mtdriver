@@ -3,6 +3,9 @@ Created on Sep 27, 2012
 
 @author: mxu
 '''
+from MTException import MTException
+import time
+
 class MTComponentType:
     '''
     IOS components:
@@ -135,7 +138,7 @@ class MTElement:
                 return False
         except  MTException.CrashError:
             raise
-        except TooManyFailedActionsError:
+        except  MTException.TooManyFailedActionsError:
             raise
         except  Exception, e:
             #print e
@@ -163,7 +166,7 @@ class MTElement:
                 return False
         except  MTException.CrashError:
             raise
-        except TooManyFailedActionsError:
+        except  MTException.TooManyFailedActionsError:
             raise        
         except  Exception, e:
             print e
