@@ -1,7 +1,7 @@
 from setuptools import setup
 setup(
     name='MTDriver',
-    version='0.02',
+    version='0.03',
     author='Mingze',
     author_email='mzxu@outlook.com',
     packages=['MTDriver'],
