@@ -4,7 +4,7 @@ Created on Sep 27, 2012
 @author: mxu
 '''
 from MTException import MTException
-import time
+import time,json
 
 class MTComponentType:
     '''
@@ -136,12 +136,14 @@ class MTElement:
                 return True
             else:
                 return False
-        except  MTException.CrashError:
+        except  MTException.CrashError, e:
+            print e
             raise
-        except  MTException.TooManyFailedActionsError:
+        except  MTException.TooManyFailedActionsError, e:
+            print e
             raise
         except  Exception, e:
-            #print e
+            print e
             return False
         
     def VerifyTappable(self, *args, **kwargs):
